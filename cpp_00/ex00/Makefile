@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 19:33:49 by jschneid          #+#    #+#              #
-#    Updated: 2023/04/18 20:21:27 by jschneid         ###   ########.fr        #
+#    Updated: 2023/04/18 20:29:49 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS		=	$(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR		=	./obj/
 
 #Colors
-RM			=	rm -f
+RM			=	rm -rf
 BOLD		=	\033[1m
 RED			=	\033[31;1m
 GREEN		=	\033[32;1m
@@ -40,7 +40,6 @@ $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
 clean:
-	@echo "$(RED)Cleaning ... $(RESET)"
 	@$(RM) $(OBJ_DIR)
 
 fclean: clean
