@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 20:35:49 by jschneid          #+#    #+#              #
-#    Updated: 2023/04/19 11:06:29 by jschneid         ###   ########.fr        #
+#    Updated: 2023/04/19 15:15:46 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all: $(NAME)
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp ./includes
+obj/%.o: %.cpp obj ./includes
 	@$(CC) $(FLAGS) -I./includes -o $@ -c $<
 
 $(NAME): $(OBJS)

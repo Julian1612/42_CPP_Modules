@@ -13,15 +13,16 @@ Functions:
 
 class Contact
 Variable:
-- first name
-- last name
-- nick name
-- phone number
-- darkest secret
+- bool		contact initialized
+- string	first name
+- string	last name
+- string	nick name
+- string	phone number
+- string	darkest secret
 
 Program logic:
 LOOP
-	PRINT "Enter of three commands: ADD, SEARCH or EXIT"
+	PRINT "Enter one of three commands: ADD, SEARCH or EXIT"
 
 	IF "ADD"
 		ENTER "First name" to phone book
