@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/19 15:58:05 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:54:19 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,37 @@ static void	draw_horizontal_line(void);
 static void	print_contact_info(Contact *contact, int index);
 static void	print_table_headers(void);
 
-void	PhoneBook::search_contact(Contact *contacts)
+void	display_contact(Contact *contact)
 {
-	int	i = 0;
-	// int	input;
+	std::cout << "First name: " << contact->first_name << std::endl;
+	std::cout << "Last name: " << contact->last_name << std::endl;
+	std::cout << "Nickname: " << contact->nickname << std::endl;
+	std::cout << "Phone number: " << contact->phone << std::endl;
+	std::cout << "Darkest secret: " << contact->secret << std::endl;
+}
+
+void	PhoneBook::search_contact()
+{
+	int	i = 1;
+	int	input;
 
 	print_table_headers();
 	// @todo put this while loop in the print_contact_info function
 	while(i < 9)
 	{
-		print_contact_info(&contacts[i], i);
+		print_contact_info(&contacts[i - 1], i);
 		i++;
 	}
-	// std::cin >> input;
-	// if (input > 0 && input < 9)
-	// 	add_data(contacts[input]);
+	std::cout << "Chose a contact (1 to 8): ";
+	std::cin >> input;
+	if (input > 0 && input < 9)
+		display_contact(&contacts[input - 1]);
 }
 
-void	PhoneBook::add_contact(Contact *contacts)
+void	PhoneBook::add_contact()
 {
 	int	new_contact = search_for_available_space(contacts);
-	printf("%d", new_contact);
+	std::cout << new_contact << std::endl;
 	add_data_to_phone_book(&contacts[new_contact]);
 }
 
@@ -56,7 +66,7 @@ static int	search_for_available_space(Contact *contacts)
 			return (i);
 		i++;
 	}
-	return (i);
+	return (7);
 }
 
 static void	add_data_to_phone_book(Contact *contacts)
@@ -71,6 +81,7 @@ static void	add_data_to_phone_book(Contact *contacts)
 	std::cin >> contacts->phone;
 	std::cout << "Please enter your darkest secret: ";
 	std::cin >> contacts->secret;
+	contacts->initialized = true;
 }
 
 
@@ -85,11 +96,11 @@ static void	print_contact_info(Contact *contact, int index)
 	std::cout << "|";
 	std::cout << std::setw(field_width) << index;
 	std::cout << "|";
+	std::cout << std::setw(field_width) << contact->first_name;
+	std::cout << "|";
 	std::cout << std::setw(field_width) << contact->last_name;
 	std::cout << "|";
 	std::cout << std::setw(field_width) << contact->nickname;
-	std::cout << "|";
-	std::cout << std::setw(field_width) << contact->phone;
 	std::cout << "|" << std::endl;
 	draw_horizontal_line();
 }

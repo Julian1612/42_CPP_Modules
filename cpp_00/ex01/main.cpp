@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/19 15:46:06 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:33:52 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	print_prompt(void);
 
 int	main(void)
 {
-	Contact		contacts[8];
+	// Contact		contacts[8];
 	PhoneBook	phonebook;
 	std::string	input;
 
@@ -31,9 +31,9 @@ int	main(void)
 		print_prompt();
 		std::cin >> input;
 		if (input == "ADD")
-			phonebook.add_contact(contacts);
+			phonebook.add_contact();
 		else if (input == "SEARCH")
-			phonebook.search_contact(contacts);
+			phonebook.search_contact();
 		else if (input == "EXIT")
 			phonebook.exit_code = false;
 	}
