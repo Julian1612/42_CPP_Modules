@@ -1,0 +1,39 @@
+Library's:
+iomanip
+string
+
+class PhoneBook
+Variable:
+bool	exit_code
+
+Functions:
+- add_contact
+- search_contact
+- exit_program
+
+class Contact
+Variable:
+- first name
+- last name
+- nick name
+- phone number
+- darkest secret
+
+Program logic:
+LOOP
+	PRINT "Enter of three commands: ADD, SEARCH or EXIT"
+
+	IF "ADD"
+		ENTER "First name" to phone book
+		ENTER "Last name" to phone book
+		ENTER "phone number" to phone book
+		...
+		...
+
+	IF "SEARCH"
+		DISPLAY all available contacts with a index in a table
+		PROMPT the index of the available contacts (1 to 8)
+		DISPLAY the content of the chosen contact line by line
+
+	IF "EXIT"
+		PROGRAM terminates
