@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 20:35:49 by jschneid          #+#    #+#              #
-#    Updated: 2023/04/19 15:15:46 by jschneid         ###   ########.fr        #
+#    Updated: 2023/04/19 20:30:21 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC			=	c++
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 #Source files
-VPATH		=	includes:
+VPATH		=	includes: src:
 SRC			=	main.cpp Contact.cpp PhoneBook.cpp
 HEADER		=	Contact.hpp PhoneBook.hpp
 OBJS		=	$(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
