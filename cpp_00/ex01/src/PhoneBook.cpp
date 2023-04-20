@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/19 20:37:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/20 10:29:07 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	PhoneBook::search_contact()
 		std::cerr << "Invalid input. Please enter a number from 1 to 8 or E.\n"; //@todo E als input handlen
 		return ;
 	}
+	std::cout << "Enter a key to return to main menu" << std::endl;
 	std::cin >> input_str;
-	std::cout << "Enter 'RETURN' to return to main menu" << std::endl;
 	if (input_str == "RETURN")
 		return ;
 }
@@ -90,8 +90,9 @@ static void	add_data_to_phone_book(Contact *contacts)
 	std::cin >> contacts->nickname;
 	std::cout << "Please enter the phone number: ";
 	std::cin >> contacts->phone;
+	std::cin.ignore();
 	std::cout << "Please enter your darkest secret: ";
-	std::cin >> contacts->secret;
+	std::getline (std::cin, contacts->secret);
 	contacts->initialized = true;
 }
 
