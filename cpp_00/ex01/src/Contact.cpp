@@ -6,9 +6,13 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:51:09 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/19 13:29:24 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:10:04 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "./inicludes/Contact.hpp"
+#include "../includes/Contact.hpp"
 
+Contact::Contact()
+{
+	initialized = 0;
+};

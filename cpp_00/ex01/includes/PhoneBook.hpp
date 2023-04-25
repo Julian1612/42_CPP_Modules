@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:46:22 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/19 17:34:25 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/25 15:54:32 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ class PhoneBook
 		void		add_contact();
 		void		search_contact();
 };
+
 
 #endif

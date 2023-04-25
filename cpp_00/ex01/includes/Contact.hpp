@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:47:20 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/19 13:38:48 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:05:07 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ class Contact
 		std::string	nickname;
 		std::string	phone;
 		std::string	secret;
-		Contact()
-		{
-			initialized = false;
-		};
+		Contact();
 };
 
 #endif

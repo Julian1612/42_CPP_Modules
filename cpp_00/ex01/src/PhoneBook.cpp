@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/20 10:29:07 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:29:46 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	PhoneBook::search_contact()
 	else
 	{
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //@todo look how this works
 		std::cerr << "Invalid input. Please enter a number from 1 to 8 or E.\n"; //@todo E als input handlen
 		return ;
 	}
@@ -59,6 +58,7 @@ void	PhoneBook::search_contact()
 void	PhoneBook::add_contact()
 {
 	int	new_contact = search_for_available_space(contacts);
+	printf("new_contact: %d\n", new_contact);
 	add_data_to_phone_book(&contacts[new_contact]);
 }
 
@@ -79,7 +79,6 @@ static int	search_for_available_space(Contact *contacts)
 	return (oldest_contact);
 }
 
-
 static void	add_data_to_phone_book(Contact *contacts)
 {
 	std::cout << "Please enter the first name: ";
@@ -96,7 +95,6 @@ static void	add_data_to_phone_book(Contact *contacts)
 	contacts->initialized = true;
 }
 
-
 static void	draw_horizontal_line(void)
 {
 	std::cout << "---------------------------------------------" << std::endl;
@@ -104,10 +102,9 @@ static void	draw_horizontal_line(void)
 
 void	print_short_version(std::string str)
 {
-	while(str.length() > 9)
-		str.pop_back();
-	str.append(".");
+	str.resize(9);
 	std::cout << str;
+	std::cout << '.';
 }
 
 static void	print_contact_info(Contact *contact)
@@ -116,9 +113,9 @@ static void	print_contact_info(Contact *contact)
 	int	field_width = 10;
 
 	print_table_headers();
-	while(i < 9)
+	while(i < 9 && contact[i - 1].initialized == true)
 	{
-		std::cout << "|";
+†z		std::cout << "|";
 		std::cout << std::setw(field_width) << i;
 		std::cout << "|";
 		if (contact[i - 1].first_name.length() > 10)
