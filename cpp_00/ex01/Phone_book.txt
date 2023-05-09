@@ -1,0 +1,39 @@
+INPUT:
+ADD
+to add a new contact to the phone book
+	-	first name
+	-	last name
+	-	nickname
+	-	phone
+	-	secret
+SEARCH
+to search a contact in the phone book
+	-	choose form the available contacts
+	min 1 and max 8
+EXIT
+to exit the phone book
+OUTPUT:
+ADD
+	-	display interface to add a new contact
+	-	ask for first name, last name, nickname etc...
+SEARCH
+	-	show all stored contacts
+	-	choose form one available contact (1 to 8)
+	-	display all information from the contact
+EXIT
+	-	finishes the program
+
+LOGIC:
+WHILE LOOP
+	PRINT Enter what you would like to do:
+		IF ADD
+			PRINT Enter first name
+			Add the input to the data ba
+
+		ELSE IF SEARCH
+
+		ELSE IF EXIT
+
+		ELSE
+
+

@@ -6,11 +6,9 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:24:53 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/18 17:53:19 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:46:20 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
