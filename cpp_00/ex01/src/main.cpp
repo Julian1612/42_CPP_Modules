@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/26 11:00:04 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:36:55 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include "../includes/PhoneBook.hpp"
 #include <stdio.h>
 
-static void	print_prompt(void);
-
 // DONE:
 // @todo when doing search: Display the saved contacts as a list of 4 columns: index, first name...
 // TO-DO:
@@ -28,6 +26,8 @@ static void	print_prompt(void);
 // @todo check if string is empty .empty()
 // @todo handle bigger and smaller numbers then index. only show safed contacts
 // @todo add constructor and deconstructor for every class
+
+static void	print_prompt(void);
 
 int	main(void)
 {
@@ -43,8 +43,8 @@ int	main(void)
 		std::getline(std::cin, input);
 		if (!input.compare("ADD"))
 			phonebook.add_contact();
-		else if (!input.compare("SEARCH"))
-			phonebook.search_contact();
+		// else if (!input.compare("SEARCH"))
+		// 	phonebook.search_contact();
 		else if (!input.compare("EXIT"))
 			phonebook.exit_code = false;
 	}

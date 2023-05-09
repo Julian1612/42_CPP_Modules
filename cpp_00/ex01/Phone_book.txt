@@ -27,13 +27,14 @@ LOGIC:
 WHILE LOOP
 	PRINT Enter what you would like to do:
 		IF ADD
-			PRINT Enter first name
-			Add the input to the data ba
+			Enter all Contact data
+			IF Input is invalid try again (phonenbr only digits etc.)
 
 		ELSE IF SEARCH
+			PRINT only the available contacts
+			get the user input for the contact he wants to see
+				check for a valid input
+			PRINT the contact data
 
 		ELSE IF EXIT
-
-		ELSE
-
-
+			Exit the programme
