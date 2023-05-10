@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:51:09 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/09 15:33:36 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:21:47 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 Contact::Contact()
 {
-	initialized = 0;
+	initialized = false;
 };
 
 void	Contact::add_first_name()

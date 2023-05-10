@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/09 11:36:55 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:54:26 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	main(void)
 		std::getline(std::cin, input);
 		if (!input.compare("ADD"))
 			phonebook.add_contact();
-		// else if (!input.compare("SEARCH"))
-		// 	phonebook.search_contact();
+		else if (!input.compare("SEARCH"))
+			phonebook.search_contact();
 		else if (!input.compare("EXIT"))
 			phonebook.exit_code = false;
 	}
