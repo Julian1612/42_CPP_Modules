@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/10 18:53:41 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:23:22 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static int print_contact_info(Contact *contact)
 	int field_width = 10;
 
 	print_table_headers();
-	while (i < 9 && contact[i].initialized == true)
+	while (i < 8 && contact[i].initialized == true)
 	{
 		std::cout << "|";
 		std::cout << std::setw(field_width) << i + 1;
@@ -125,24 +125,25 @@ static int print_contact_info(Contact *contact)
 
 void PhoneBook::search_contact()
 {
-	bool		check = false;
-	std::string	input_str;
+	int			input;
 	int			printed_contacts = print_contact_info(contacts);
+	bool		check = false;
 
 	while(!std::cin.eof() && check == false)
 	{
 		std::cin.clear();
-		std::cout << "Chose a contact from the index, type EXIT to leave: ";
-		std::getline(std::cin, input_str);
-		if (!input_str.compare("EXIT"))
+		std::cout << "Select contact index: ";
+		std::cin >> input;
+		if ((input > 0 && input < 9)
+			&& input <= printed_contacts)
+		{
+			display_contact(&contacts[input - 1]);
 			check = true;
-		else if ((!input_str.compare("1") || !input_str.compare("2")
-					|| !input_str.compare("3") || !input_str.compare("4")
-					|| !input_str.compare("5") || !input_str.compare("6")
-					|| !input_str.compare("7") || !input_str.compare("8"))
-					&& std::stoi(input_str) <= printed_contacts)
-			display_contact(&contacts[std::stoi(input_str) - 1]);
+		}
 		else
-			std::cout << "Input is invalid, please try again" << std::endl;
+		{
+			std::cout << "Input is invalid" << std::endl;
+			check = true;
+		}
 	}
 }

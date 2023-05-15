@@ -6,14 +6,14 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:08:53 by jschneid          #+#    #+#             */
-/*   Updated: 2023/04/18 17:12:39 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:54:25 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.h"
 
-Zombie *newZombie(std::string name)
+Zombie*	newZombie(std::string ZombieName)
 {
-	Zombie	*newObject = new Zombie(name);
-	return	(newObject);
+	Zombie	*newZombie = new Zombie(ZombieName);
+	return (newZombie);
 }

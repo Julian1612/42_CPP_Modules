@@ -6,25 +6,27 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/10 16:54:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:28:26 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
 #include <iomanip>
+#include <limits>
 #include "../includes/Contact.hpp"
 #include "../includes/PhoneBook.hpp"
 #include <stdio.h>
 
 // DONE:
 // @todo when doing search: Display the saved contacts as a list of 4 columns: index, first name...
-// TO-DO:
 // @todo control + c && control + d
-// @todo handle white space and newline as input as a error
 // @todo check if phonenbr is all digit when adding the phonenbr to phonebook
-// @todo check if string is empty .empty()
 // @todo handle bigger and smaller numbers then index. only show safed contacts
+// @todo handle as an error when the line is empty and return is pressed as input
+// @todo check if string is empty .empty()
+// TO-DO:
+// @todo if there is a tab in the input string form the ADD function its a invalid input
 // @todo add constructor and deconstructor for every class
 
 static void	print_prompt(void);
@@ -39,6 +41,7 @@ int	main(void)
 	while(phonebook.exit_code && !std::cin.eof())
 	{
 		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter, what you would like to do: ";
 		std::getline(std::cin, input);
 		if (!input.compare("ADD"))

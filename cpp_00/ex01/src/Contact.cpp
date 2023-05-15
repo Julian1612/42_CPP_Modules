@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:51:09 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/10 17:21:47 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:47:01 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	Contact::add_first_name()
 		std::cin.clear();
 		std::cout << "First name    : ";
 		std::getline(std::cin, input);
-		if (input.find(" ") > input.size())
+		if ((input.find(" ") > input.size()) && !input.empty())
 		{
 			check = true;
 			first_name = input;
@@ -53,7 +53,7 @@ void	Contact::add_last_name()
 		std::cout << "Last name     : ";
 		std::getline(std::cin, input);
 		std::size_t found = input.find(" ");
-		if (found > input.size())
+		if (found > input.size() && !input.empty())
 		{
 			check = true;
 			last_name = input;
@@ -74,7 +74,7 @@ void	Contact::add_nickname()
 		std::cin.clear();
 		std::cout << "Nickname      : ";
 		std::getline(std::cin, input);
-		if (input.find(" ") > input.size())
+		if (input.find(" ") > input.size() && !input.empty())
 		{
 			check = true;
 			nickname = input;
@@ -108,13 +108,13 @@ void	Contact::add_phone()
 		std::cin.clear();
 		std::cout << "Phone         : ";
 		std::getline(std::cin, input);
-		if (is_all_digit(input) == true)
+		if (is_all_digit(input) == true && !input.empty())
 		{
 			check = true;
 			phone = input;
 		}
 		else
-			std::cout << "Input is invalid, please try again" << std::endl;
+			std::cout << "Only numbers, please try again" << std::endl;
 	}
 }
 
@@ -129,8 +129,12 @@ void	Contact::add_secret()
 		std::cin.clear();
 		std::cout << "Darkest Secret: ";
 		std::getline(std::cin, input);
-		if (input.size() > 1)
+		if (!input.empty())
+		{
 			check = true;
-		secret = input;
+			secret = input;
+		}
+		else
+			std::cout << "Input is invalid, please try again" << std::endl;
 	}
 }
