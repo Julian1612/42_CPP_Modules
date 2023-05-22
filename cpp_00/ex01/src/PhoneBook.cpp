@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/11 16:23:22 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:42:48 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int search_for_available_index(Contact *contacts)
 	int i = 0;
 	static int oldest_contact = -1;
 
-	if (oldest_contact == 8)
+	if (oldest_contact == 7)
 		oldest_contact = -1;
 	while (i < 8)
 	{
@@ -39,6 +39,7 @@ void PhoneBook::add_contact()
 {
 	int			i = 0;
 	int			i_contact = search_for_available_index(contacts);
+	std::cout << i_contact << std::endl;
 
 	while(i < 5)
 	{
@@ -55,6 +56,8 @@ void PhoneBook::add_contact()
 		i++;
 	}
 	contacts[i_contact].initialized = true;
+	std::cout << "\nPress enter to safe contact" << std::endl;
+	std::cin.ignore();
 }
 
 void display_contact(Contact *contact)
@@ -122,7 +125,7 @@ static int print_contact_info(Contact *contact)
 	return (i);
 }
 
-
+// @todo entering a letter for the index the output is wrong
 void PhoneBook::search_contact()
 {
 	int			input;
@@ -146,4 +149,5 @@ void PhoneBook::search_contact()
 			check = true;
 		}
 	}
+	std::cin.ignore();
 }

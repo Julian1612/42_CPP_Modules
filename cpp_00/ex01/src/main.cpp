@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/11 16:28:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:42:57 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,17 @@ int	main(void)
 	print_prompt();
 	while(phonebook.exit_code && !std::cin.eof())
 	{
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Enter, what you would like to do: ";
+		std::cin.clear();
 		std::getline(std::cin, input);
-		if (!input.compare("ADD"))
+		if (!input.compare("a"))
 			phonebook.add_contact();
-		else if (!input.compare("SEARCH"))
+		else if (!input.compare("s"))
 			phonebook.search_contact();
-		else if (!input.compare("EXIT"))
+		else if (!input.compare("e"))
 			phonebook.exit_code = false;
+		else
+			std::cout << "Please enter a valid command" << std::endl;
 	}
 	return (0);
 }
