@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/22 17:42:57 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:57:23 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@
 // @todo check if phonenbr is all digit when adding the phonenbr to phonebook
 // @todo handle bigger and smaller numbers then index. only show safed contacts
 // @todo handle as an error when the line is empty and return is pressed as input
-// @todo check if string is empty .empty()
+// @todo entering a letter for the index the output is wrong
 // TO-DO:
+// @todo check if string is empty .empty()
 // @todo if there is a tab in the input string form the ADD function its a invalid input
 // @todo add constructor and deconstructor for every class
 
@@ -41,16 +42,20 @@ int	main(void)
 	while(phonebook.exit_code && !std::cin.eof())
 	{
 		std::cout << "Enter, what you would like to do: ";
-		std::cin.clear();
 		std::getline(std::cin, input);
-		if (!input.compare("a"))
+		if (!input.compare("ADD"))
 			phonebook.add_contact();
-		else if (!input.compare("s"))
+		else if (!input.compare("SEARCH"))
 			phonebook.search_contact();
-		else if (!input.compare("e"))
+		else if (!input.compare("EXIT"))
 			phonebook.exit_code = false;
 		else
+		{
 			std::cout << "Please enter a valid command" << std::endl;
+			std::cout << "Press enter to continue";
+			std::cout.clear();
+		}
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 	return (0);
 }

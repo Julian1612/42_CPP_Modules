@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:51:09 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/22 17:20:59 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:48:58 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	Contact::add_first_name()
 		std::cin.clear();
 		std::cout << "First name    : ";
 		std::getline(std::cin, input);
-		if ((input.find(" ") > input.size()) && !input.empty())
+		if ((input.find(" ") > input.size()) && input.find('\t')
+			&& !input.empty())
 		{
 			check = true;
 			first_name = input;
@@ -53,7 +54,8 @@ void	Contact::add_last_name()
 		std::cout << "Last name     : ";
 		std::getline(std::cin, input);
 		std::size_t found = input.find(" ");
-		if (found > input.size() && !input.empty())
+		if (found > input.size() && input.find("	")
+			&& !input.empty())
 		{
 			check = true;
 			last_name = input;
@@ -74,7 +76,8 @@ void	Contact::add_nickname()
 		std::cin.clear();
 		std::cout << "Nickname      : ";
 		std::getline(std::cin, input);
-		if (input.find(" ") > input.size() && !input.empty())
+		if (input.find(" ") > input.size() && input.find("	")
+			&& !input.empty())
 		{
 			check = true;
 			nickname = input;
@@ -108,7 +111,8 @@ void	Contact::add_phone()
 		std::cin.clear();
 		std::cout << "Phone         : ";
 		std::getline(std::cin, input);
-		if (is_all_digit(input) == true && !input.empty())
+		if (is_all_digit(input) == true  && input.find("	")
+			&& !input.empty())
 		{
 			check = true;
 			phone = input;
