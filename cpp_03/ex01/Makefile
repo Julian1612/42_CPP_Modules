@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 09:56:06 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/25 13:06:36 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/25 15:37:14 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CC       = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRC      = main.cpp ClapTrap.cpp
-HEADER   = ClapTrap.h
+SRC      = main.cpp ClapTrap.cpp ScavTrap.cpp
+HEADER   = ClapTrap.h ScavTrap.h
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
 RM       = rm -rf
