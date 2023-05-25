@@ -6,46 +6,45 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:54:49 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 14:27:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:34:36 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
+#include "ScavTrap.h"
 
-int main( void )
+#include <iostream>
+
+int main (void)
 {
-	ClapTrap Default;
-	ClapTrap Killer9000( "Killer9000" );
+	ScavTrap nameless;
+	ScavTrap scav( "Scav" );
 	int i = -1;
 
-	Killer9000.attack( "Default" );
-	Default.takeDamage( 5 );
-	Default.attack( "Killer9000" );
-	Killer9000.takeDamage( 5 );
-	Default.beRepaired( 4294967295 );
-	Killer9000.attack( "Default" );
-	Default.takeDamage( 10 );
-	Killer9000.attack( "Default" );
-	Default.takeDamage( 5 );
-	Default.beRepaired( 10 );
-	Killer9000.attack( "Default" );
-	Default.takeDamage( 5 );
-	Killer9000.attack( "Default" );
-	Default.takeDamage( 5 );
-	Default.beRepaired( 10 );
+	scav.attack( "Something" );
+	scav.beRepaired( 10 );
+	scav.takeDamage( 10 );
+	scav.guardGate();
+	nameless.attack ( "something" );
+	nameless.attack ( "a wall" );
+	nameless.beRepaired( 10 );
+	nameless.beRepaired( 15 );
+	nameless.takeDamage( 20 );
+	nameless.takeDamage( 100 );
+	nameless.guardGate();
 
 	std::cout << "\nEnergy test!\n" << std::endl;
 
-	ClapTrap NoEnergy( "Bob" );
+	ScavTrap NoEnergy( "Bob" );
 
-	while (++i < 10)
+	while (++i < 50)
 		NoEnergy.attack( "a Tree" );
 	NoEnergy.beRepaired( 10 );
 	NoEnergy.attack( "door" );
 
 	std::cout << "\nDeath test!\n" << std::endl;
 
-	ClapTrap Dead( "clown" );
+	ScavTrap Dead( "clown" );
 
 	Dead.takeDamage( 100 );
 	Dead.takeDamage( 10 );

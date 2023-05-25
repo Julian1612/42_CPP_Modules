@@ -6,12 +6,13 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:22:34 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 14:36:39 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:47:20 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
 #include <iostream>
+#include <string>
 #define MAXNBR 429496729
 // @todo make a copy constructor
 
@@ -33,6 +34,12 @@ ClapTrap::ClapTrap(std::string input_name)
 	std::cout << this->name << " is spawned" << std::endl;
 }
 
+ClapTrap::ClapTrap( const ClapTrap &obj ) {
+	*this = obj;
+	std::cout << "Copy constructor called" << std::endl;
+	return ;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << this->name << " is destroyed" << std::endl;
@@ -43,7 +50,6 @@ ClapTrap &ClapTrap::operator=( ClapTrap const &instance) {
 	this->hit_points = instance.hit_points;
 	this->attack_damage = instance.attack_damage;
 	this->energy_points = instance.energy_points;
-	std::cout << "\n hier \n";
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:16:51 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 14:25:17 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:35:47 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-	private:
+	protected:
 		std::string	name;
 		unsigned int			hit_points;
 		unsigned int			energy_points;

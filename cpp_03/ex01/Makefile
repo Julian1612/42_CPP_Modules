@@ -6,12 +6,12 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 09:56:06 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/25 15:37:14 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/25 17:36:49 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler options
-NAME     = clapTrap
+NAME     = ScavTrap
 CC       = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98
 
