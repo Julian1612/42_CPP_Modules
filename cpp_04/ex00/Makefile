@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/26 11:21:07 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/26 11:21:18 by jschneid         ###   ########.fr        #
+#    Created: 2023/05/26 15:57:29 by jschneid          #+#    #+#              #
+#    Updated: 2023/05/26 16:03:39 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler options
-NAME     = ex00
+NAME     = Animal
 CC       = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRC      = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-HEADER   = ClapTrap.h ScavTrap.h FragTap.h
+SRC      = main.cpp Animal.cpp Dog.cpp Cat.cpp
+HEADER   = Animal.h†pp Dog.hpp Cat.hpp
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
 RM       = rm -rf

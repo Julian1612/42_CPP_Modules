@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/26 16:01:46 by jschneid         ###   ########.fr       */
+/*   Created: 2023/05/26 15:54:51 by jschneid          #+#    #+#             */
+/*   Updated: 2023/05/26 15:59:30 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main(void)
+# include <iostream>
+# include <string>
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	const Animal* meta = new Animal(); const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	return 0;
-}
+	public:
+		// Constructors
+		Cat();
+		Cat(const Cat &copy);
+
+		// Destructor
+		~Cat();
+
+		// Operators
+		Cat & operator=(const Cat &assign);
+
+		// Getters / Setters
+		std::string getType() const;
+
+		// Member functions
+		void	makeSound(void) const;
+	private:
+
+	protected:
+};
+
+#endif
