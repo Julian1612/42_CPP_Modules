@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/16 12:37:15 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/24 15:31:19 by jschneid         ###   ########.fr        #
+#    Created: 2023/05/26 15:57:29 by jschneid          #+#    #+#              #
+#    Updated: 2023/05/27 10:51:42 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler options
-NAME     = ex04
+NAME     = Animal
 CC       = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRC      = main.cpp Replacer.cpp
+SRC      = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+HEADER   = Animal.h†pp Dog.hpp Cat.hpp
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
 RM       = rm -rf

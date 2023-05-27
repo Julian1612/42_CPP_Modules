@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 14:24:06 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/15 14:24:38 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/16 19:33:47 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,11 @@ FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRC      = main.cpp
-HEADER   = Zombie.h
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
+RM       = rm -rf
 
 # Colors
-RM       = rm -f
 BOLD     = \033[1m
 RED      = \033[31;1m
 GREEN    = \033[32;1m

@@ -6,21 +6,21 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 12:37:22 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/16 12:37:33 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/24 15:31:15 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler options
-NAME     = ex01
+NAME     = ex05
 CC       = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRC      = main.cpp Harl.cpp
-HEADER   = Zombie.h
+HEADER   = Harl.h
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
-RM       = rm -f
+RM       = rm -rf
 
 # Colors
 BOLD     = \033[1m

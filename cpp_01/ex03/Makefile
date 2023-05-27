@@ -6,21 +6,21 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 14:32:34 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/15 14:34:00 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/24 15:31:29 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler options
-NAME     = ex01
+NAME     = ex03
 CC       = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRC      = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-HEADER   = Zombie.h
+HEADER   = HumanA.h HumanB.h Weapon.h
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
-RM       = rm -f
+RM       = rm -rf
 
 # Colors
 BOLD     = \033[1m

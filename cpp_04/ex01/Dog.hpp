@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 15:45:13 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/17 12:47:13 by jschneid         ###   ########.fr       */
+/*   Created: 2023/05/26 15:55:07 by jschneid          #+#    #+#             */
+/*   Updated: 2023/05/26 15:59:36 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#ifndef FIXED_H
-# define FIXED_H
-
-# include <string>
 # include <iostream>
+# include <string>
+#include "Animal.hpp"
 
-class Fixed
+class Dog : public Animal
 {
-	private:
-		int					fixedPointNbr;
-		static const int	nbrFractionalBits = 8;
-
 	public:
-		Fixed(void);
-		Fixed(Fixed const &other);
-		Fixed &operator=(Fixed const &other);
-		~Fixed(void);
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		// Constructors
+		Dog();
+		Dog(const Dog &copy);
 
+		// Destructor
+		~Dog();
+
+		// Operators
+		Dog & operator=(const Dog &assign);
+
+		// Getters / Setters
+		std::string getType() const;
+
+		// Member functions
+		void	makeSound(void) const;
+	private:
+
+	protected:
 };
 
 #endif

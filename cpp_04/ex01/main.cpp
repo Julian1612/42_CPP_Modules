@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.h                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 15:45:13 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/17 12:47:13 by jschneid         ###   ########.fr       */
+/*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
+/*   Updated: 2023/05/27 11:06:38 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#ifndef FIXED_H
-# define FIXED_H
-
-# include <string>
-# include <iostream>
-
-class Fixed
+int main()
 {
-	private:
-		int					fixedPointNbr;
-		static const int	nbrFractionalBits = 8;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	public:
-		Fixed(void);
-		Fixed(Fixed const &other);
-		Fixed &operator=(Fixed const &other);
-		~Fixed(void);
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
-
-};
-
-#endif
+	delete j;//should not create a leak
+	delete i;
+	return 0;
+}

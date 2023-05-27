@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 11:36:03 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/15 12:28:20 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/16 19:35:04 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ SRC      = main.cpp Zombie.cpp zombieHorde.cpp
 HEADER   = Zombie.h
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
+RM       = rm -rf
 
 # Colors
-RM       = rm -f
 BOLD     = \033[1m
 RED      = \033[31;1m
 GREEN    = \033[32;1m
