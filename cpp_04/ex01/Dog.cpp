@@ -6,11 +6,12 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:52:58 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/26 16:18:05 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:48:34 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 // Constructors
 Dog::Dog(void)
@@ -52,4 +53,25 @@ std::string Dog::getType() const
 void	Dog::makeSound(void) const
 {
 	std::cout << this->getType() << ": dog sound" << std::endl;
+}
+
+void Dog::setBrain(unsigned int i, std::string thoughts)
+{
+		this->brain->setIdeas(i, thoughts);
+		return ;
+}
+
+void Dog::printIdeas( void )
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->brain->getIdeas(i) == "BLANK")
+			;
+		else
+		{
+			std::cout << "Idea : " << this->brain->getIdeas(i) << std::endl;
+			std::cout << "Address : " << this->brain->getAddress(i) << std::endl;
+		}
+	}
+	return ;
 }

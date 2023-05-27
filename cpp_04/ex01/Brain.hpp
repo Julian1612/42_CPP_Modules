@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/27 11:54:12 by jschneid          #+#    #+#             */
+/*   Updated: 2023/05/27 13:03:33 by jschneid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
@@ -10,7 +22,6 @@ class Brain
 		// Constructors
 		Brain();
 		Brain(const Brain &copy);
-		Brain(std::string ideas);
 
 		// Destructor
 		~Brain();
@@ -21,9 +32,14 @@ class Brain
 		// Getters / Setters
 		std::string getIdeas() const;
 
+		// Member functions
+		void		setIdeas(unsigned int	i, std::string	ideas);
+		std::string	getIdeas(unsigned int	i);
+		std::string	*getAddress(unsigned int	i);
+
 	private:
 		std::string _ideas[100];
-
+	protected:
 };
 
 #endif

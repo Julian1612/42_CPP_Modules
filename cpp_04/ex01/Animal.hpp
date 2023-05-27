@@ -12,7 +12,7 @@ class Animal
 		Animal(const Animal &copy);
 
 		// Destructor
-		~Animal();
+		virtual ~Animal();
 
 		// Operators
 		Animal & operator=(const Animal &assign);

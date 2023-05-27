@@ -6,11 +6,12 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:43:19 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/26 16:18:10 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/27 13:01:50 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 // Constructors
 Cat::Cat(void)
@@ -52,4 +53,25 @@ std::string Cat::getType() const
 void	Cat::makeSound(void) const
 {
 	std::cout << this->getType() << ": cat sound" << std::endl;
+}
+
+void Cat::setIdeas( unsigned int i, std::string thoughts )
+{
+		this->brain->setIdeas(i, thoughts);
+		return ;
+}
+
+void Cat::printIdeas( void )
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->brain->getIdeas(i) == "BLANK")
+			;
+		else
+		{
+			std::cout << "Idea : " << this->brain->getIdeas(i) << std::endl;
+			std::cout << "Address : " << this->brain->getAddress(i) << std::endl;
+		}
+	}
+	return ;
 }

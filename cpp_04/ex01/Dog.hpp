@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:55:07 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/26 15:59:36 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/27 13:01:26 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -25,7 +26,7 @@ class Dog : public Animal
 		Dog(const Dog &copy);
 
 		// Destructor
-		~Dog();
+		virtual ~Dog();
 
 		// Operators
 		Dog & operator=(const Dog &assign);
@@ -35,8 +36,10 @@ class Dog : public Animal
 
 		// Member functions
 		void	makeSound(void) const;
+		void	setBrain(unsigned int i, std::string	ideas);
+		void	printIdeas(void);
 	private:
-
+		Brain	*brain;
 	protected:
 };
 
