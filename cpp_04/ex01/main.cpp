@@ -6,23 +6,16 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/27 13:03:11 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:12:05 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "./includes/Animal.hpp"
+#include "./includes/Dog.hpp"
+#include "./includes/Cat.hpp"
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
-#include <iostream>
-
-
+// @todo has not the same output as danis
 int main()
 {
         Animal *Array[10];

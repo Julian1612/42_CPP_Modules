@@ -6,12 +6,12 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:52:58 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/27 12:48:34 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:12:24 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Brain.hpp"
+#include "./includes/Dog.hpp"
+#include "./includes/Brain.hpp"
 
 // Constructors
 Dog::Dog(void)
@@ -20,7 +20,7 @@ Dog::Dog(void)
 	std::cout << "\e[0;33mDefault Constructor called of Dog\e[0m" << std::endl;
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy) : Animal(copy)
 {
 	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Dog\e[0m" << std::endl;

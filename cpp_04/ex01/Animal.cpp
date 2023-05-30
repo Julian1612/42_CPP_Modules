@@ -6,11 +6,11 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/27 12:30:52 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:12:13 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "./includes/Animal.hpp"
 
 // Constructors
 Animal::Animal(void)

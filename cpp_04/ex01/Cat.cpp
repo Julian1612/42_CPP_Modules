@@ -6,17 +6,19 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:43:19 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/27 13:01:50 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:16:10 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "./includes/Cat.hpp"
+#include "./includes/Brain.hpp"
+#include <iostream>
 
 // Constructors
 Cat::Cat(void)
 {
 	this->_type = "🐈";
+	brain = new Brain();
 	std::cout << "\e[0;33mDefault Constructor called of Cat\e[0m" << std::endl;
 }
 
@@ -30,6 +32,7 @@ Cat::Cat(const Cat &copy)
 // Destructor
 Cat::~Cat()
 {
+	delete brain;
 	std::cout << "\e[0;31mDestructor called of Cat\e[0m" << std::endl;
 }
 
@@ -38,6 +41,8 @@ Cat::~Cat()
 Cat & Cat::operator=(const Cat &assign)
 {
 	this->_type = assign.getType();
+	delete brain;
+	brain = new Brain(*assign.brain);
 	std::cout << "Cat's copy assignment operator called" << std::endl;
 	return (*this);
 }

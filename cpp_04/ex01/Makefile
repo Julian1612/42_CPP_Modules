@@ -6,7 +6,7 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 15:57:29 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/27 12:54:44 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/30 16:10:58 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS    = -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRC      = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
-HEADER   = Animal.h†pp Dog.hpp Cat.hpp Brain.hpp
+HEADER   = Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 OBJ_DIR  = ./obj/
 RM       = rm -rf
