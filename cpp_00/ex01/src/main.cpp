@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:35:55 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/24 12:01:06 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:40:26 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,6 @@
 #include "../includes/PhoneBook.hpp"
 #include <stdio.h>
 
-// DONE:
-// @todo when doing search: Display the saved contacts as a list of 4 columns: index, first name...
-// @todo control + c && control + d
-// @todo check if phonenbr is all digit when adding the phonenbr to phonebook
-// @todo handle bigger and smaller numbers then index. only show safed contacts
-// @todo handle as an error when the line is empty and return is pressed as input
-// @todo entering a letter for the index the output is wrong
-// TO-DO:
-// @todo check if string is empty .empty()
-// @todo if there is a tab in the input string form the ADD function its a invalid input
-// @todo add constructor and deconstructor for every class
-
 static void	print_prompt(void);
 
 int	main(void)
@@ -37,9 +25,8 @@ int	main(void)
 	PhoneBook	phonebook;
 	std::string	input;
 
-	phonebook.exit_code = true;
 	print_prompt();
-	while(phonebook.exit_code && !std::cin.eof())
+	while(!std::cin.eof())
 	{
 		std::cout << "Enter, what you would like to do: ";
 		std::getline(std::cin, input);
@@ -48,7 +35,7 @@ int	main(void)
 		else if (!input.compare("SEARCH"))
 			phonebook.search_contact();
 		else if (!input.compare("EXIT"))
-			phonebook.exit_code = false;
+			break ;
 		else
 		{
 			std::cout << "Please enter a valid command" << std::endl;

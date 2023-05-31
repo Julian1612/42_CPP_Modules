@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/24 09:45:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:43:30 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 #include <iostream>
 #include <string.h>
 #include <iomanip>
-// @todo remove
-#include <stdio.h>
 
 static int search_for_available_index(Contact *contacts);
 static int print_contact_info(Contact *contact);
 static void print_table_headers(void);
 void print_short_version(std::string str);
 void display_contact(Contact *contact);
-
 
 void PhoneBook::add_contact()
 {
@@ -73,7 +70,6 @@ void PhoneBook::search_contact()
 			return ;
 		}
 	}
-
 }
 
 static int search_for_available_index(Contact *contacts)
