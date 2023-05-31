@@ -6,46 +6,36 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 11:36:03 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/16 19:35:04 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/31 20:40:31 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler options
-NAME     = ex01
-CC       = c++
-FLAGS    = -Wall -Wextra -Werror -std=c++98
+# Definitions
+NAME			= ex01
+SRC				= Zombie.cpp zombieHorde.cpp main.cpp
+HEADER			= Zombie.h
+OBJ_DIR			= ./obj/
+OBJ				= $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
+CC				= c++
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-# Source files
-SRC      = main.cpp Zombie.cpp zombieHorde.cpp
-HEADER   = Zombie.h
-OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
-OBJ_DIR  = ./obj/
-RM       = rm -rf
-
-# Colors
-BOLD     = \033[1m
-RED      = \033[31;1m
-GREEN    = \033[32;1m
-YELLOW   = \033[33;1m
-RESET    = \033[0m
-
+# Execution
 all: $(NAME)
 
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp obj
-	@$(CC) $(FLAGS) -o $@ -c $<
+obj/%.o: %.cpp obj $(HEADER)
+	@$(CC) $(CFLAGS) -I./$(HEADER) -c $< -o $@
 
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
 
 clean:
-	@echo "$(RED)Cleaning ... $(RESET)"
-	@$(RM) $(OBJ_DIR)
+	@$(RM) -rf obj
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME)
 
 re: fclean all
 

@@ -6,48 +6,38 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 20:35:49 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/22 17:05:07 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/31 21:06:37 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compilor options
-NAME		=	phonebook
-CC			=	c++
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
-
-#Source files
+# Definitions
+NAME			= ex03
 VPATH		=	includes: src:
-SRC			=	main.cpp Contact.cpp PhoneBook.cpp
+SRC			=	Contact.cpp PhoneBook.cpp main.cpp
 HEADER		=	Contact.hpp PhoneBook.hpp
-OBJS		=	$(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
-OBJ_DIR		=	./obj/
+OBJ_DIR			= ./obj/
+OBJ				= $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
+CC				= c++
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-#Colors
-RM			=	rm -rf
-BOLD		=	\033[1m
-RED			=	\033[31;1m
-GREEN		=	\033[32;1m
-YELLOW		=	\033[33;1m
-RESET		=	\033[0m
-
+# Execution
 all: $(NAME)
 
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp obj ./includes
-	@$(CC) $(FLAGS) -I./includes -o $@ -c $<
+obj/%.o: %.cpp ./includes
+	@$(CC) $(CFLAGS) -I./includes -c $< -o $@
 
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) $(FLAGS) -I./includes -o $(NAME)
+$(NAME): obj $(OBJ)
+	@$(CC) $(OBJ) $(CFLAGS) -I./includes -o $(NAME)
 
 clean:
-	@echo "$(RED)Cleaning ... $(RESET)"
-	@$(RM) $(OBJ_DIR)
+	@$(RM) -rf obj
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re

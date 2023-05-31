@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/30 16:12:05 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:17:15 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "./includes/Cat.hpp"
 
 // @todo has not the same output as danis
+//@todo wornganimal und worngcat class fehlt noch
 int main()
 {
         Animal *Array[10];
