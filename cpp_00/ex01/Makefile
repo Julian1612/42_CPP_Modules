@@ -6,15 +6,15 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 20:35:49 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/31 21:06:37 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/31 21:17:06 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Definitions
-NAME			= ex03
-VPATH		=	includes: src:
-SRC			=	Contact.cpp PhoneBook.cpp main.cpp
-HEADER		=	Contact.hpp PhoneBook.hpp
+NAME			= ex00
+VPATH			= includes: src:
+SRC				= Contact.cpp PhoneBook.cpp main.cpp
+HEADER			= Contact.hpp PhoneBook.hpp
 OBJ_DIR			= ./obj/
 OBJ				= $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 CC				= c++

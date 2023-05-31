@@ -6,12 +6,12 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 19:33:49 by jschneid          #+#    #+#              #
-#    Updated: 2023/04/18 20:29:49 by jschneid         ###   ########.fr        #
+#    Updated: 2023/05/31 21:16:45 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compilor options
-NAME		=	megaphone
+NAME		=	ex00
 CC			=	c++
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
