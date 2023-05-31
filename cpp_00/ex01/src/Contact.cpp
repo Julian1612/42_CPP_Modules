@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:51:09 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/31 11:40:30 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/31 12:16:42 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	Contact::add_first_name()
 			&& !input.empty())
 		{
 			check = true;
-			first_name = input;
+			firstName_ = input;
 		}
 		else
 			std::cout << "Input is invalid, please try again" << std::endl;
@@ -56,7 +56,7 @@ void	Contact::add_last_name()
 			&& !input.empty())
 		{
 			check = true;
-			last_name = input;
+			lastName_ = input;
 		}
 		else
 			std::cout << "Input is invalid, please try again" << std::endl;
@@ -78,7 +78,7 @@ void	Contact::add_nickname()
 			&& !input.empty())
 		{
 			check = true;
-			nickname = input;
+			nickname_ = input;
 		}
 		else
 			std::cout << "Input is invalid, please try again" << std::endl;
@@ -113,7 +113,7 @@ void	Contact::add_phone()
 			&& !input.empty())
 		{
 			check = true;
-			phone = input;
+			phone_ = input;
 		}
 		else
 			std::cout << "Only numbers, please try again" << std::endl;
@@ -134,9 +134,34 @@ void	Contact::add_secret()
 		if (!input.empty())
 		{
 			check = true;
-			secret = input;
+			secret_ = input;
 		}
 		else
 			std::cout << "Input is invalid, please try again" << std::endl;
 	}
+}
+
+std::string	Contact::getFirstName(void)
+{
+	return(firstName_);
+}
+
+std::string	Contact::getLastName(void)
+{
+	return(lastName_);
+}
+
+std::string	Contact::getNickname(void)
+{
+	return(nickname_);
+}
+
+std::string	Contact::getPhone(void)
+{
+	return(phone_);
+}
+
+std::string	Contact::getSecret(void)
+{
+	return(secret_);
 }

@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:50:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/31 11:43:30 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/31 12:18:56 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ static int search_for_available_index(Contact *contacts)
 
 void display_contact(Contact *contact)
 {
-	std::cout << "First name:     " << contact->first_name << std::endl;
-	std::cout << "Last name:      " << contact->last_name << std::endl;
-	std::cout << "Nickname:       " << contact->nickname << std::endl;
-	std::cout << "Phone number:   " << contact->phone << std::endl;
-	std::cout << "Darkest secret: " << contact->secret << std::endl;
+	std::cout << "First name:     " << contact->getFirstName() << std::endl;
+	std::cout << "Last name:      " << contact->getLastName() << std::endl;
+	std::cout << "Nickname:       " << contact->getNickname() << std::endl;
+	std::cout << "Phone number:   " << contact->getPhone() << std::endl;
+	std::cout << "Darkest secret: " << contact->getSecret() << std::endl;
 }
 
 void print_short_version(std::string str)
@@ -133,20 +133,20 @@ static int print_contact_info(Contact *contact)
 		std::cout << "|";
 		std::cout << std::setw(field_width) << i + 1;
 		std::cout << "|";
-		if (contact[i].first_name.length() > 10)
-			print_short_version(contact[i].first_name);
+		if (contact[i].getFirstName().length() > 10)
+			print_short_version(contact[i].getFirstName());
 		else
-			std::cout << std::setw(field_width) << contact[i].first_name;
+			std::cout << std::setw(field_width) << contact[i].getFirstName();
 		std::cout << "|";
-		if (contact[i].last_name.length() > 10)
-			print_short_version(contact[i].last_name);
+		if (contact[i].getLastName().length() > 10)
+			print_short_version(contact[i].getLastName());
 		else
-			std::cout << std::setw(field_width) << contact[i].last_name;
+			std::cout << std::setw(field_width) << contact[i].getLastName();
 		std::cout << "|";
-		if (contact[i].nickname.length() > 10)
-			print_short_version(contact[i].nickname);
+		if (contact[i].getNickname().length() > 10)
+			print_short_version(contact[i].getNickname());
 		else
-			std::cout << std::setw(field_width) << contact[i].nickname;
+			std::cout << std::setw(field_width) << contact[i].getNickname();
 		std::cout << "|" << std::endl;
 		i++;
 	}

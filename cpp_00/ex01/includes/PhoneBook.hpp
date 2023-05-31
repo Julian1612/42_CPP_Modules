@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:46:22 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/31 11:45:50 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/05/31 12:22:02 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@
 class PhoneBook
 {
 	public:
-		Contact		contacts[7];
+		// PhoneBook()
+		// ~PhoneBook();
 		void		add_contact();
 		void		search_contact();
 	private:
+		Contact		contacts[7];
+
 };
 
 
