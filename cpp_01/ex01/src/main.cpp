@@ -6,12 +6,13 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:36:52 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/15 12:53:36 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/01 10:16:23 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.h"
+#include <cstdlib>
 
 int main(void)
 {

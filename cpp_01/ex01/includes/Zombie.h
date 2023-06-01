@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:36:33 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/15 12:47:50 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/01 10:31:38 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,22 @@
 
 class Zombie
 {
-	private:
-		std::string m_name;
 	public:
-		Zombie();
+		// Constructor
+		Zombie(void);
 		Zombie(std::string name);
+
+		// Destructor
 		~Zombie(void);
+
+		// Member functions
 		void	announce(void);
 		void	setZombieName(std::string name);
+
+	private:
+		std::string m_name;
 };
 
-Zombie*	zombieHorde(int N, std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
