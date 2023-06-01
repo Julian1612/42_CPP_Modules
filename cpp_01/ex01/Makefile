@@ -6,12 +6,13 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 11:36:03 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/31 20:40:31 by jschneid         ###   ########.fr        #
+#    Updated: 2023/06/01 09:50:22 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Definitions
 NAME			= ex01
+VPATH			= includes: src:
 SRC				= Zombie.cpp zombieHorde.cpp main.cpp
 HEADER			= Zombie.h
 OBJ_DIR			= ./obj/
@@ -25,11 +26,11 @@ all: $(NAME)
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp obj $(HEADER)
-	@$(CC) $(CFLAGS) -I./$(HEADER) -c $< -o $@
+obj/%.o: %.cpp ./includes
+	@$(CC) $(CFLAGS) -I./includes -c $< -o $@
 
-$(NAME): $(OBJ)
-	@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+$(NAME): obj $(OBJ)
+	@$(CC) $(OBJ) $(CFLAGS) -I./includes -o $(NAME)
 
 clean:
 	@$(RM) -rf obj

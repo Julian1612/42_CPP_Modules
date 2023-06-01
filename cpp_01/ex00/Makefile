@@ -6,14 +6,15 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 10:53:20 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/31 21:12:33 by jschneid         ###   ########.fr        #
+#    Updated: 2023/06/01 09:53:08 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Definitions
 NAME    = ex00
+VPATH   = includes: src:
 SRC     = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
-HEADER  = Zombie.h
+HEADER  = Zombie.hpp
 OBJ_DIR = ./obj/
 OBJ     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
 CC      = c++
@@ -25,17 +26,17 @@ all: $(NAME)
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp obj $(HEADER)
-	@$(CC) $(CFLAGS) -I./$(HEADER) -c $< -o $@
+obj/%.o: %.cpp ./includes
+	@$(CC) $(CFLAGS) -I./includes -c $< -o $@
 
 $(NAME): obj $(OBJ)
-	@$(CC) $(OBJ) $(CFLAGS) -o $@
+	@$(CC) $(OBJ) $(CFLAGS) -I./includes -o $(NAME)
 
 clean:
-	@$(RM) -rf $(OBJ_DIR)
+	@$(RM) -rf obj
 
 fclean: clean
-	@$(RM) -f $(NAME)
+	@$(RM) -rf $(NAME)
 
 re: fclean all
 
