@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:02:53 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/01 09:41:49 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/01 10:18:22 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int main(void)
 {
-	Zombie	*Franky = newZombie("Frank the Tank");
+	Zombie	*Franky = newZombie("Franky");
 
 	Franky->announce();
-	randomChump("Thorsten");
+	randomChump("Ringo");
 	delete Franky;
 	return (0);
 }
