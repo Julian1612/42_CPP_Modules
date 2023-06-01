@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 19:00:57 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/16 11:56:00 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/01 15:30:50 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ bool replacer(const std::string& file_name, const std::string& arg1, const std::
 	std::string		output_file_name;
 	std::ifstream	file(file_name.c_str());
 
+	if (arg1.empty() || arg2.empty())
+	{
+		std::cout << "Error! One of the arguments is empty!" << std::endl;
+		return (1);
+	}
 	if (!file.is_open())
 	{
 		std::cout << "Error! Failed to open the file" << std::endl;
@@ -47,10 +52,10 @@ bool replacer(const std::string& file_name, const std::string& arg1, const std::
 	return (true);
 }
 
-// @todo check if everything is working as aspected
-
-int main(int argc, char** argv) {
-	if (argc != 4) {
+int main(int argc, char** argv)
+{
+	if (argc != 4)
+	{
 		std::cout << "Error! The number of arguments is wrong" << std::endl;
 		return 1;
 	}
