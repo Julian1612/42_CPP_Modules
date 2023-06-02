@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 14:32:11 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/01 11:00:34 by jschneid         ###   ########.fr       */
+/*   Created: 2023/05/15 14:32:37 by jschneid          #+#    #+#             */
+/*   Updated: 2023/06/02 10:32:12 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-
-#include "HumanA.h"
 #include "Weapon.h"
 
-HumanA::HumanA(std::string name, Weapon& weapon) : m_name(name), m_weapon(weapon) {
+// Constructors
+Weapon::Weapon(std::string weapon): m_type(weapon) {
 	return ;
 }
 
-
-HumanA::~HumanA(void) {
+// Destructors
+Weapon::~Weapon(void) {
 	return ;
 }
 
-void	HumanA::attack(void) const {
-	std::cout << this->m_name << " attacks with their " << this->m_weapon.getType() << std::endl;
+// Getter / Setter
+const std::string	&Weapon::getType() const {
+	return (this->m_type);
+}
+
+void	Weapon::setType(std::string	newType) {
+	this->m_type = newType;
+	return ;
 }

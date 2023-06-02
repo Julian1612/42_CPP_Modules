@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:24:53 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/01 09:39:01 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/02 10:04:15 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 
 # include <string>
 
-class Zombie
-{
+class Zombie {
 	private:
 		std::string m_name;
 	public:
+		// Constructor
 		Zombie(void);
 		Zombie(std::string name);
+
+		// Destructor
 		~Zombie(void);
+
+		// Member functions
 		void	announce(void);
 };
 

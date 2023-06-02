@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:32:26 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/01 10:45:24 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/02 10:43:37 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ class HumanB
 		// Destructor
 		~HumanB(void);
 
-		// Member functions
-		void	attack(void);
+		// Setter
 		void	setWeapon(Weapon& weapon);
+
+		// Member functions
+		void	attack(void) const;
 
 	private:
 		std::string	m_name;

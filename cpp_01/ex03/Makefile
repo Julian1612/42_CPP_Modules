@@ -6,13 +6,13 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 14:32:34 by jschneid          #+#    #+#              #
-#    Updated: 2023/06/01 15:50:02 by jschneid         ###   ########.fr        #
+#    Updated: 2023/06/02 09:47:16 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Definitions
 NAME			= ex03
-VPATH			= include:
+VPATH			= include: src:
 SRC				= HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 HEADER			= HumanA.h HumanB.h Weapon.h
 OBJ_DIR			= ./obj/
