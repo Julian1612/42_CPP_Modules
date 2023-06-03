@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:13 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/03 15:31:46 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:02:30 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Fixed {
 		// Operators
 		Fixed &operator=(Fixed const &other);
 
-		// Member functions
+		// Getter / Setter
 		int					getRawBits(void) const;
 		void				setRawBits(int const raw);
 
