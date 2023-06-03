@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:11 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/03 15:38:09 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:26:21 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 #include "Fixed.h"
 
 // Constructor
-Fixed::Fixed(void) {
+Fixed::Fixed(void) : fixedPointNbr(0 ){
 	std::cout << "Default constructor called" << std::endl;
-	this->fixedPointNbr = 0;
 }
 
 Fixed::Fixed(const int parameter) {
@@ -27,7 +26,7 @@ Fixed::Fixed(const int parameter) {
 
 Fixed::Fixed(const float parameter) {
 	std::cout << "Float constructor called" << std::endl;
-	this->fixedPointNbr = std::roundf( parameter * ( 1 << this->nbrFractionalBits));
+	this->fixedPointNbr = roundf( parameter * ( 1 << this->nbrFractionalBits));
 }
 
 Fixed::Fixed(const Fixed &other) {
@@ -41,11 +40,6 @@ Fixed::~Fixed(void) {
 }
 
 //Operators
-std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
-	os << obj.toFloat();
-	return (os);
-}
-
 Fixed &Fixed::operator=(Fixed const &other) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -65,9 +59,15 @@ void Fixed::setRawBits(int const raw) {
 
 // Member functions
 float	Fixed::toFloat(void) const {
-	return (roundf( this->fixedPointNbr) / (float)(1 << this->nbrFractionalBits));
+	return (static_cast<float>(this->fixedPointNbr) / (1 << this->nbrFractionalBits));
 }
 
 int		Fixed::toInt(void) const {
-	return (this->fixedPointNbr / (1 << this->nbrFractionalBits));
+	return (this->fixedPointNbr >> this->nbrFractionalBits);
+}
+
+// Utility functions
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+	os << obj.toFloat();
+	return (os);
 }

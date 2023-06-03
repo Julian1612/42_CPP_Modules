@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:13 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/03 15:32:18 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/03 18:18:24 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Fixed {
 
 		// Operators
 		Fixed &operator=(Fixed const &other);
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 		// Member functions
 		int					getRawBits(void) const;
@@ -43,5 +42,7 @@ class Fixed {
 		static const int	nbrFractionalBits = 8;
 
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif
