@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:13 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/19 17:48:05 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/03 15:31:46 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,26 @@
 # include <string>
 # include <iostream>
 
-class Fixed
-{
+class Fixed {
+
 	public:
-		//** Task form the subject **//
-
-		// A constructor that takes a constant integer as a parameter.
-		Fixed(const int parameter);
-		// A constructor that takes a constant floating-point number as a parameter.
-		Fixed(const float parameter);
-		// A member function that converts the fixed-point value to a floating-point value.
-		float	toFloat(void) const;
-		// A member function that converts the fixed-point value to an integer value.
-		int		toInt(void) const;
-		// An overload of the insertion («) operator that inserts a floating-point representation
-		// of the fixed-point number into the output stream object passed as parameter.
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-
+		// Constructor
 		Fixed(void);
 		Fixed(Fixed const &other);
-		Fixed &operator=(Fixed const &other);
+
+		// Destructor
 		~Fixed(void);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+
+		// Operators
+		Fixed &operator=(Fixed const &other);
+
+		// Member functions
+		int					getRawBits(void) const;
+		void				setRawBits(int const raw);
 
 	private:
 		int					fixedPointNbr;
 		static const int	nbrFractionalBits = 8;
-
 };
 
 #endif

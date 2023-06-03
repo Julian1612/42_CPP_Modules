@@ -6,12 +6,12 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:16 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/16 16:47:16 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/03 15:46:46 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.h"
+#include "../includes/Fixed.h"
 
 int main( void )
 {

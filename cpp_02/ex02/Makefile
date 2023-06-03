@@ -6,46 +6,37 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 15:45:18 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/16 15:55:40 by jschneid         ###   ########.fr        #
+#    Updated: 2023/06/03 15:51:56 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler options
-NAME     = ex01
-CC       = c++
-FLAGS    = -Wall -Wextra -Werror -std=c++98
+# Definitions
+NAME		=	ex02
+VPATH		=	includes: src:
+SRC			=	Fixed.cpp main.cpp
+HEADER		=	Fixed.h
+OBJ_DIR		=	./obj/
+OBJ			=	$(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-# Source files
-SRC      = main.cpp Fixed.cpp
-HEADER   = Zombie.h
-OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
-OBJ_DIR  = ./obj/
-RM       = rm -f
-
-# Colors
-BOLD     = \033[1m
-RED      = \033[31;1m
-GREEN    = \033[32;1m
-YELLOW   = \033[33;1m
-RESET    = \033[0m
-
+# Execution
 all: $(NAME)
 
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp obj
-	@$(CC) $(FLAGS) -o $@ -c $<
+obj/%.o: %.cpp ./includes
+	@$(CXX) $(CXXFLAGS) -I./includes -c $< -o $@
 
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+$(NAME): obj $(OBJ)
+	@$(CXX) $(OBJ) $(CXXFLAGS) -I./includes -o $(NAME)
 
 clean:
-	@echo "$(RED)Cleaning ... $(RESET)"
-	@$(RM) $(OBJ_DIR)
+	@$(RM) -rf obj
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME)
 
 re: fclean all
 
