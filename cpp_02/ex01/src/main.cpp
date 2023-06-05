@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:16 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/17 17:06:09 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/05 10:12:08 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "Fixed.h"
 #include <iostream>
 
-// @todo in the output the copy assignment operator called message is missing
 int main( void )
 {
 	Fixed a;

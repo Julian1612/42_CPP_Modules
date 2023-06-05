@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:45:13 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/03 18:29:48 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/05 13:54:52 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,26 @@ class Fixed {
 		Fixed(const int parameter);
 		Fixed(const float parameter);
 		Fixed(Fixed const &other);
+		Fixed &operator=(Fixed const &other);
 
 		// Destructor
 		~Fixed(void);
 
 		// Operators
-		Fixed &operator=(Fixed const &other);
-		Fixed operator>(Fixed const &other);
-		Fixed operator<(Fixed const &other);
-		Fixed operator>=(Fixed const &other);
-		Fixed operator<=(Fixed const &other);
-		Fixed operator==(Fixed const &other);
-		Fixed operator!=(Fixed const &other);
-		Fixed operator+(Fixed const &other);
-		Fixed operator-(Fixed const &other);
-		Fixed operator*(Fixed const &other);
-		Fixed operator/(Fixed const &other);
+		bool operator>(Fixed const &other) const;
+		bool operator<(Fixed const &other) const;
+		bool operator>=(Fixed const &other) const;
+		bool operator<=(Fixed const &other) const;
+		bool operator==(Fixed const &other) const;
+		bool operator!=(Fixed const &other) const;
+		Fixed operator+(Fixed const &other) const;
+		Fixed operator-(Fixed const &other) const;
+		Fixed operator*(Fixed const &other) const;
+		Fixed operator/(Fixed const &other) const;
 		Fixed operator++(int);
-		Fixed operator++(void);
+		Fixed &operator++();
 		Fixed operator--(int);
-		Fixed operator--(void);
+		Fixed &operator--();
 
 		// Member functions
 		int		getRawBits(void) const;
