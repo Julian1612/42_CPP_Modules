@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:37:24 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 14:02:49 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:49:31 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 #include "ClapTrap.h"
 #include "ScavTrap.h"
 
+// @todo Note that proper construction/destruction chaining
+//       must be shown in your tests. When a ScavTrap is created,
+//       the program starts by building a ClapTrap.
+//       Destruction is in reverse order. Why?
+
 // Constructor
-ScavTrap::ScavTrap(void) : ClapTrap() {
+ScavTrap::ScavTrap(void) : ClapTrap(void) {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->name = "ScavDefault";
 	this->hit_points = 100;

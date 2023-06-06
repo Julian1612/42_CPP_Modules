@@ -6,14 +6,14 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:22:34 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 13:58:20 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:12:04 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
 #include <iostream>
 #define MAXNBR 429496729
-// @todo make a copy constructor
+
 // Constructor
 ClapTrap::ClapTrap(void) {
 	std::cout << "Default constructor called" << std::endl;
@@ -47,7 +47,6 @@ ClapTrap &ClapTrap::operator=( ClapTrap const &instance) {
 	this->hit_points = instance.hit_points;
 	this->attack_damage = instance.attack_damage;
 	this->energy_points = instance.energy_points;
-	std::cout << "\n hier \n";
 	return (*this);
 }
 
