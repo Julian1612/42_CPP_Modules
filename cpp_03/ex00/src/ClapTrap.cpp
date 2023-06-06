@@ -6,13 +6,13 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:22:34 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 14:12:04 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:12:51 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
 #include <iostream>
-#define MAXNBR 429496729
+#define MAXNBR 4294967295
 
 // Constructor
 ClapTrap::ClapTrap(void) {
@@ -24,11 +24,11 @@ ClapTrap::ClapTrap(void) {
 }
 
 ClapTrap::ClapTrap(std::string input_name) {
-	std::cout << this->name << " is spawned" << std::endl;
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 0;
 	this->name = input_name;
+	std::cout << this->name << " is spawned" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const& obj) {
@@ -86,11 +86,17 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	}
 }
 
+// @todo change name of the variable i
 void	ClapTrap::beRepaired(unsigned int amount) {
-	long long	ref = amount;
 
-	if ((ref + amount) > MAXNBR)
-	{
+	long long	ref =  amount;
+	ref += this->hit_points;
+
+	if (this->hit_points == MAXNBR) {
+		std::cout << "Health is max" << std::endl;
+		return ;
+	}
+	if (ref > MAXNBR) {
 		unsigned int i = MAXNBR - this->hit_points;
 		this->hit_points = MAXNBR;
 		std::cout << "ClapTrap " << this->name;
@@ -103,10 +109,10 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
 	else if (this->energy_points == 0)
 		std::cout << "ClapTrap " << this->name << " has no energy points left to repair him self" << std::endl;
-	else
-	{
+	else {
 		std::cout << "ClapTrap " << this->name;
 		std::cout << " undergoes repairs, resulting in a win of ";
 		std::cout << amount << " hit points." << std::endl;
+		this->hit_points += amount;
 	}
 }

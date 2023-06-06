@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:54:49 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 14:27:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:57:17 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int main( void )
 	Default.attack( "Killer9000" );
 	Killer9000.takeDamage( 5 );
 	Default.beRepaired( 4294967295 );
+	Default.beRepaired( 10 );
 	Killer9000.attack( "Default" );
-	Default.takeDamage( 10 );
+	Default.takeDamage( 5 );
 	Killer9000.attack( "Default" );
 	Default.takeDamage( 5 );
 	Default.beRepaired( 10 );

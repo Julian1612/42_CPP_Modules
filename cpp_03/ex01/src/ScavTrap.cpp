@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:37:24 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 14:49:31 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:15:23 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //       Destruction is in reverse order. Why?
 
 // Constructor
-ScavTrap::ScavTrap(void) : ClapTrap(void) {
+ScavTrap::ScavTrap(void) : ClapTrap() {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->name = "ScavDefault";
 	this->hit_points = 100;
