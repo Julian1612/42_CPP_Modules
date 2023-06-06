@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:24:15 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 10:54:19 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:08:10 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class FragTrap : public ClapTrap {
 		FragTrap(FragTrap const& obj);
 
 		// Destructor
-		~FragTrap();
+		~FragTrap(void);
 
 		// Operator
 		FragTrap &operator=(FragTrap const &obj);

@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:16:51 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 10:53:53 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:53:43 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ClapTrap {
 		ClapTrap(ClapTrap const& obj);
 
 		// Destructor
-		~ClapTrap();
+		~ClapTrap(void);
 
 		// Operator
 		ClapTrap &operator=(ClapTrap const &obj);

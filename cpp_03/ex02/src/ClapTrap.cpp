@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:22:34 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 10:55:47 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:53:38 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,28 @@
 
 // Constructor
 ClapTrap::ClapTrap(void) {
+	std::cout << "Default constructor called" << std::endl;
 	this->name = "Default";
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string input_name) {
+	std::cout << this->name << " is spawned" << std::endl;
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 0;
 	this->name = input_name;
-	std::cout << this->name << " is spawned" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap &obj ) {
-	*this = obj;
+ClapTrap::ClapTrap(ClapTrap const& obj) {
 	std::cout << "Copy constructor called" << std::endl;
-	return ;
+	*this = obj;
 }
 
 // Destructor
-ClapTrap::~ClapTrap() {
+ClapTrap::~ClapTrap(void) {
 	std::cout << this->name << " is destroyed" << std::endl;
 }
 

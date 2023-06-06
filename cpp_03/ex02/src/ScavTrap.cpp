@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:37:24 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 10:57:02 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:47:43 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 
 // Constructor
 ScavTrap::ScavTrap(void) : ClapTrap() {
+	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->name = "ScavDefault";
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
-	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string input_name) : ClapTrap(input_name) {
+	std::cout << "ScavTrap user-defined constructor called" << std::endl;
 	this->name = input_name;
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
-	std::cout << "ScavTrap user-defined constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const& obj) : ClapTrap(obj) {
-	*this = obj;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = obj;
 }
 
 // Destructor
@@ -44,11 +44,11 @@ ScavTrap::~ScavTrap(void) {
 
 // Operator
 ScavTrap &ScavTrap::operator=(ScavTrap const &instance) {
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 	this->name = instance.name;
 	this->hit_points = instance.hit_points;
 	this->attack_damage = instance.attack_damage;
 	this->energy_points = instance.energy_points;
-	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 	return (*this);
 }
 
