@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:54:49 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/26 11:01:18 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:50:00 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 #include <iostream>
 
-int main( void )
-{
+int main(void) {
 	FragTrap A;
 	FragTrap B( "Special" );
 	FragTrap C( A );

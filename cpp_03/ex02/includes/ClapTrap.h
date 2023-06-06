@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:16:51 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 17:35:47 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:53:53 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 
 #include <iostream>
 
-class ClapTrap
-{
+class ClapTrap {
 	public:
+		// Constructor
 		ClapTrap(void);
 		ClapTrap(std::string input_name);
 		ClapTrap(ClapTrap const& obj);
+
+		// Destructor
 		~ClapTrap();
+
+		// Operator
 		ClapTrap &operator=(ClapTrap const &obj);
+
+		// Member function
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);

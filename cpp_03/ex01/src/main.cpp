@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:54:49 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 17:34:36 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:50:45 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 #include <iostream>
 
-int main (void)
-{
+int main (void) {
 	ScavTrap nameless;
 	ScavTrap scav( "Scav" );
 	int i = -1;

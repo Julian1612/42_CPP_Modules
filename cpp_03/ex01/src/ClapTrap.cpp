@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:22:34 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/25 17:47:20 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:58:02 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #define MAXNBR 429496729
 // @todo make a copy constructor
 
-ClapTrap::ClapTrap(void)
-{
+// Constructor
+ClapTrap::ClapTrap(void) {
 	this->name = "Default";
 	this->hit_points = 10;
 	this->energy_points = 10;
@@ -25,8 +25,7 @@ ClapTrap::ClapTrap(void)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string input_name)
-{
+ClapTrap::ClapTrap(std::string input_name) {
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 0;
@@ -40,11 +39,12 @@ ClapTrap::ClapTrap( const ClapTrap &obj ) {
 	return ;
 }
 
-ClapTrap::~ClapTrap()
-{
+// Destructor
+ClapTrap::~ClapTrap() {
 	std::cout << this->name << " is destroyed" << std::endl;
 }
 
+// Operator
 ClapTrap &ClapTrap::operator=( ClapTrap const &instance) {
 	this->name = instance.name;
 	this->hit_points = instance.hit_points;
@@ -53,8 +53,8 @@ ClapTrap &ClapTrap::operator=( ClapTrap const &instance) {
 	return (*this);
 }
 
-void	ClapTrap::attack(const std::string& target)
-{
+// Member functions
+void	ClapTrap::attack(const std::string& target) {
 	if (this->energy_points == 0)
 		std::cout << "ClapTrap " << this->name << " has no energy to attack" << std::endl;
 	else if (this->hit_points == 0)
@@ -69,8 +69,7 @@ void	ClapTrap::attack(const std::string& target)
 	}
 }
 
-void	ClapTrap::takeDamage(unsigned int amount)
-{
+void	ClapTrap::takeDamage(unsigned int amount) {
 	if (this->hit_points == 0)
 	{
 		std::cout << "ClapTrap " << this->name << " is dead!" << std::endl;
@@ -90,8 +89,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
-void	ClapTrap::beRepaired(unsigned int amount)
-{
+void	ClapTrap::beRepaired(unsigned int amount) {
 	long long	ref = amount;
 
 	if ((ref + amount) > MAXNBR)
