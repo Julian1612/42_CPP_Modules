@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:22:34 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 16:18:12 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:02:25 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	}
 }
 
-// @todo change name of the variable i
 void	ClapTrap::beRepaired(unsigned int amount) {
 
 	long long	ref =  amount;
@@ -97,11 +96,11 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		return ;
 	}
 	if (ref > MAXNBR) {
-		unsigned int i = MAXNBR - this->hit_points;
+		unsigned int tmp = MAXNBR - this->hit_points;
 		this->hit_points = MAXNBR;
 		std::cout << "ClapTrap " << this->name;
 		std::cout << " undergoes repairs, resulting in a win of ";
-		std::cout << i << " hit points." << std::endl;
+		std::cout << tmp << " hit points." << std::endl;
 		std::cout << "ClapTrap " << this->name << " has max health!" << std::endl;
 		return ;
 	}

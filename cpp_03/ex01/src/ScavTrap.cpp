@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:37:24 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 16:17:20 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:03:24 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include <iostream>
 #include "ClapTrap.h"
 #include "ScavTrap.h"
-
-// @todo Note that proper construction/destruction chaining
-//       must be shown in your tests. When a ScavTrap is created,
-//       the program starts by building a ClapTrap.
-//       Destruction is in reverse order. Why?
 
 // Constructor
 ScavTrap::ScavTrap(void) : ClapTrap() {

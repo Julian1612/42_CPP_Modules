@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:54:49 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/06 10:50:00 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:14:53 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,43 @@
 
 #include <iostream>
 
-int main(void) {
-	FragTrap A;
-	FragTrap B( "Special" );
-	FragTrap C( A );
+int main( void )
+{
+	FragTrap Default;
+	FragTrap SirClumsyMcFumble("Sir Clumsy McFumble");
+	FragTrap defultCpy(Default);
 	int i = -1;
 
-	A.attack( "Tree" );
-	A.beRepaired( 10 );
-	A.takeDamage( 10 );
-	A.highFivesGuys();
-	B.attack( "Tree" );
-	B.beRepaired( 10 );
-	B.takeDamage( 10 );
-	B.highFivesGuys();
-	C.attack( "Tree" );
-	C.beRepaired( 10 );
-	C.takeDamage( 10 );
-	C.highFivesGuys();
+	std::cout << "\n*--FIGHT!--*\n" << std::endl;
+	Default.attack("Lady Silly Socks");
+	Default.beRepaired(10);
+	Default.takeDamage(10);
+	Default.takeDamage(5);
+	Default.highFivesGuys();
+	SirClumsyMcFumble.attack("Major Bumblebee");
+	SirClumsyMcFumble.beRepaired(10);
+	SirClumsyMcFumble.takeDamage(10);
+	SirClumsyMcFumble.highFivesGuys();
+	defultCpy.attack("Princess Bubblegum");
+	defultCpy.beRepaired(10);
+	defultCpy.takeDamage(10);
+	defultCpy.highFivesGuys();
 
-	std::cout << "\nEnergy test!\n" << std::endl;
-
-	FragTrap NoEnergy( "Bob" );
+	std::cout << "\n*--Repair test!--*\n" << std::endl;
+	FragTrap enemy("Duke Noodlebrain");
 
 	while (++i < 100)
-		NoEnergy.attack( "a Tree" );
-	NoEnergy.beRepaired( 10 );
-	NoEnergy.attack( "door" );
+		enemy.attack("a Confetti Cannon" );
+	enemy.beRepaired(10);
+	enemy.attack("Colonel Wobblebottom");
 
-	std::cout << "\nDeath test!\n" << std::endl;
+	std::cout << "\n*--Death test!--*\n" << std::endl;
+	FragTrap missWhimsyWhiskers("Miss Whimsy Whiskers");
 
-	FragTrap Dead( "clown" );
-
-	Dead.takeDamage( 100 );
-	Dead.takeDamage( 10 );
-	Dead.beRepaired( 10 );
-	Dead.attack( "someone" );
-
+	missWhimsyWhiskers.takeDamage(100);
+	missWhimsyWhiskers.takeDamage(10);
+	missWhimsyWhiskers.beRepaired(10);
+	missWhimsyWhiskers.attack("Doctor Snickerdoodle");
 	std::cout << std::endl;
 	return (0);
 }
