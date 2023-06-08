@@ -6,46 +6,39 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 15:57:29 by jschneid          #+#    #+#              #
-#    Updated: 2023/05/26 16:03:39 by jschneid         ###   ########.fr        #
+#    Updated: 2023/06/08 12:48:53 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler options
-NAME     = Animal
-CC       = c++
-FLAGS    = -Wall -Wextra -Werror -std=c++98
+# Definitions
+NAME	=	ex00
+VPATH	=	includes: src:
+SRC		=	Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp\
+			WrongCat.cpp main.cpp
+HEADER	=	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp\
+			WrongCat.hpp
+OBJ_DIR	=	./obj/
+OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
+CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-# Source files
-SRC      = main.cpp Animal.cpp Dog.cpp Cat.cpp
-HEADER   = Animal.h†pp Dog.hpp Cat.hpp
-OBJS     = $(addprefix $(OBJ_DIR),$(SRC:.cpp=.o))
-OBJ_DIR  = ./obj/
-RM       = rm -rf
-
-# Colors
-BOLD     = \033[1m
-RED      = \033[31;1m
-GREEN    = \033[32;1m
-YELLOW   = \033[33;1m
-RESET    = \033[0m
-
+# Execution
 all: $(NAME)
 
 obj:
 	@mkdir -p $(OBJ_DIR)
 
-obj/%.o: %.cpp obj
-	@$(CC) $(FLAGS) -o $@ -c $<
+obj/%.o: %.cpp ./includes
+	@$(CC) $(CFLAGS) -I./includes -c $< -o $@
 
-$(NAME): $(OBJS)
-	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+$(NAME): obj $(OBJ)
+	@$(CC) $(OBJ) $(CFLAGS) -I./includes -o $(NAME)
 
 clean:
-	@echo "$(RED)Cleaning ... $(RESET)"
-	@$(RM) $(OBJ_DIR)
+	@$(RM) -rf obj
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME)
 
 re: fclean all
 
