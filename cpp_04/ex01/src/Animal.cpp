@@ -6,16 +6,17 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:46:36 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/30 16:12:13 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:06:23 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/Animal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
 // Constructors
 Animal::Animal(void)
 {
-	_type = "Animal";
+	this->_type = "Animal";
 	std::cout << "\e[0;33mDefault Constructor called of Animal\e[0m" << std::endl;
 }
 
@@ -36,8 +37,8 @@ Animal::~Animal()
 // Operators
 Animal & Animal::operator=(const Animal &assign)
 {
-	this->_type = assign.getType();
 	std::cout << "Animal's copy assignment operator called" << std::endl;
+	this->_type = assign.getType();
 	return (*this);
 }
 

@@ -3,8 +3,9 @@
 
 # include <iostream>
 # include <string>
+# include "WrongAnimal.hpp"
 
-class WrongCat
+class WrongCat : public WrongAnimal
 {
 	public:
 		// Constructors
@@ -17,8 +18,11 @@ class WrongCat
 		// Operators
 		WrongCat & operator=(const WrongCat &assign);
 
-	private:
+		// Getter / Setter
+		std::string getType() const;
 
+		// Member function
+		void	makeSound(void) const;
 };
 
 #endif

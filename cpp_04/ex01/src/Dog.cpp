@@ -6,21 +6,22 @@
 /*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:52:58 by jschneid          #+#    #+#             */
-/*   Updated: 2023/05/30 16:12:24 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/08 23:02:03 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/Dog.hpp"
-#include "./includes/Brain.hpp"
+#include "Dog.hpp"
+#include "Brain.hpp"
 
 // Constructors
 Dog::Dog(void)
 {
 	this->_type = "🐕";
+	this->brain = new Brain();
 	std::cout << "\e[0;33mDefault Constructor called of Dog\e[0m" << std::endl;
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy)
+Dog::Dog(const Dog &copy)  :Animal(copy)
 {
 	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Dog\e[0m" << std::endl;
@@ -30,6 +31,7 @@ Dog::Dog(const Dog &copy) : Animal(copy)
 // Destructor
 Dog::~Dog()
 {
+	delete this->brain;
 	std::cout << "\e[0;31mDestructor called of Dog\e[0m" << std::endl;
 }
 
@@ -43,29 +45,15 @@ Dog & Dog::operator=(const Dog &assign)
 }
 
 // Getters / Setters
-std::string Dog::getType() const
+void Dog::setIdea(unsigned int i, std::string idea) const
 {
-	return (_type);
+	this->brain->setIdeas(i, idea);
 }
 
-
-// Member functions
-void	Dog::makeSound(void) const
+void Dog::printIdeas() const
 {
-	std::cout << this->getType() << ": dog sound" << std::endl;
-}
-
-void Dog::setBrain(unsigned int i, std::string thoughts)
-{
-		this->brain->setIdeas(i, thoughts);
-		return ;
-}
-
-void Dog::printIdeas( void )
-{
-	for (int i = 0; i < 100; i++)
-	{
-		if (this->brain->getIdeas(i) == "BLANK")
+	for (int i = 0; i < 100; i++) {
+		if (this->brain->getIdeas(i) == "")
 			;
 		else
 		{
@@ -73,5 +61,11 @@ void Dog::printIdeas( void )
 			std::cout << "Address : " << this->brain->getAddress(i) << std::endl;
 		}
 	}
-	return ;
+}
+
+
+// Member functions
+void	Dog::makeSound(void) const
+{
+	std::cout << this->getType() << "  : woof woof" << std::endl;
 }

@@ -17,8 +17,13 @@ class WrongAnimal
 		// Operators
 		WrongAnimal & operator=(const WrongAnimal &assign);
 
-	private:
+		// Getter / Setter
+		std::string getType() const;
 
+		//Member functions
+		void	makeSound(void) const;
+	protected:
+		std::string	_type;
 };
 
 #endif
