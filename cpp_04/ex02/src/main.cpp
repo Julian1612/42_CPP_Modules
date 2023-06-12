@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/12 15:40:45 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/12 16:30:56 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,18 @@ int main()
 	std::cout << std::endl;
 	delete cat;
 	delete new_cat;
+	std::cout << "\n*--Check abstract base class--*\n" << std::endl;
+	Animal* animalPtr;
+
+	Dog testdog;
+	Cat testcat;
+	// uncomment to check if its not possible to create this abstract class
+	// Animal testanimal;
+
+	animalPtr = &testdog;
+	animalPtr->makeSound();
+	animalPtr = &testcat;
+	animalPtr->makeSound();
 
 	return 0;
 }
