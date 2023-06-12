@@ -20,7 +20,6 @@ class Brain
 		// Getters / Setters
 		void 		setIdeas(unsigned int i, std::string newIdea);
 		std::string	getIdeas(unsigned int);
-		std::string	*getAddress(unsigned int i);
 
 	private:
 		std::string	_ideas[100];

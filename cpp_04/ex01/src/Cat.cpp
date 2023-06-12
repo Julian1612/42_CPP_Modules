@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:43:19 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/08 23:20:21 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/12 10:21:00 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,15 @@ Cat::~Cat()
 // Operators
 Cat & Cat::operator=(const Cat &assign)
 {
-	this->brain = assign.brain;
-	this->_type = assign.getType();
-	std::cout << "Cat's copy assignment operator called" << std::endl;
-	return (*this);
+	std::cout << "Copy assignment operator called of Cat" << std::endl;
+	if (this != &assign)
+	{
+		this->_type = assign._type;
+		this->brain = new Brain( *assign.brain );
+	}
+	return *this;
 }
+
 
 // Getters / Setters
 void Cat::setIdea(unsigned int i, std::string idea) const
@@ -58,10 +62,7 @@ void Cat::printIdeas() const
 		if (this->brain->getIdeas(i) == "Here is still space for a new idea")
 			return ;
 		else
-		{
 			std::cout << "Idea : " << this->brain->getIdeas(i) << std::endl;
-			std::cout << "Address : " << this->brain->getAddress(i) << std::endl;
-		}
 	}
 }
 

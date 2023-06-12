@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:52:58 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/08 23:02:03 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:51:30 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,7 @@ void Dog::printIdeas() const
 		if (this->brain->getIdeas(i) == "")
 			;
 		else
-		{
 			std::cout << "Idea : " << this->brain->getIdeas(i) << std::endl;
-			std::cout << "Address : " << this->brain->getAddress(i) << std::endl;
-		}
 	}
 }
 

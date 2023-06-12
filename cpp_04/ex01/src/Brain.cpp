@@ -35,20 +35,6 @@ void Brain::setIdeas( unsigned int i, std::string newIdea ) {
 		std::cout << "Here is already a idea stored" << std::endl;
 }
 
-// std::string Brain::getIdeas( unsigned int i ) const{
-// 	std::cout << "hi" << std::endl;
-// 	if (i < 100 && !this->_ideas[i].empty())
-// 	{
-// 		std::cout << "hi" << std::endl;
-// 		return(this->_ideas[i]);
-// 	}
-// 	else
-// 	{
-// 		std::cout << "hi" << std::endl;
-// 		return ("Here is still space for a new idea");
-// 	}
-// }
-
 std::string Brain::getIdeas(unsigned int i) {
 	if (i < 100 && !this->_ideas[i].empty())
 		return this->_ideas[i];
@@ -56,9 +42,3 @@ std::string Brain::getIdeas(unsigned int i) {
 		return "Here is still space for a new idea";
 }
 
-std::string *Brain::getAddress( unsigned int i ) {
-	if (!this->_ideas[i].empty())
-		return(&this->_ideas[i]);
-	else
-		return (NULL);
-}
