@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 13:38:20 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/13 13:38:26 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:09:43 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		Animal(const Animal &copy);
 
 		// Destructor
-		~Animal();
+		virtual ~Animal();
 
 		// Operators
 		Animal & operator=(const Animal &assign);
