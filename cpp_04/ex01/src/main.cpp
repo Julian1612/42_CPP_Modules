@@ -6,7 +6,7 @@
 /*   By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/12 15:40:45 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:01:50 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ int main()
 	std::cout << "\n*--Create deep copy--*\n" << std::endl;
 	Cat *new_cat = new Cat(*cat);
 	std::cout << "\n*--Deep copy created--*\n" << std::endl;
+	std::cout << "--Original--" << std::endl;
+	cat->printIdeas();
+	std::cout << "\n--Copy--" << std::endl;\
+	new_cat->printIdeas();
 	new_cat->setIdea(0, "Aight, let's get some food");
 	new_cat->setIdea(1, "Oh boy, I'm freaking hungry");
 	new_cat->setIdea(2, "Damn man, I'm that was really good");
