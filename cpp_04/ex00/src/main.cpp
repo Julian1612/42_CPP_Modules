@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: jschneid <jschneid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 15:36:41 by jschneid          #+#    #+#             */
-/*   Updated: 2023/06/08 13:45:54 by jschneid         ###   ########.fr       */
+/*   Updated: 2023/06/13 13:37:40 by jschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,6 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
-
-// int main(void)
-// {
-// 	const Animal* randomAnimal = new Animal();
-// 	const Animal* dog = new Dog();
-// 	const Animal* cat = new Cat();
-// 	std::cout << dog->getType() << " " << std::endl;
-// 	std::cout << cat->getType() << " " << std::endl;
-// 	cat->makeSound(); //will output the cat sound!
-// 	dog->makeSound();
-// 	randomAnimal->makeSound();
-// 	return 0;
-// }
 
 int main(void)
 {
