@@ -6,12 +6,12 @@
 #    By: jschneid <jschneid@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 15:57:29 by jschneid          #+#    #+#              #
-#    Updated: 2023/06/08 23:12:25 by jschneid         ###   ########.fr        #
+#    Updated: 2023/06/13 13:50:43 by jschneid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Definitions
-NAME	=	ex01
+NAME	=	ex02
 VPATH	=	includes: src:
 SRC		=	Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp\
 			WrongCat.cpp Brain.cpp main.cpp
